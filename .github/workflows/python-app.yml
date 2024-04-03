@@ -36,9 +36,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Compile Python files
       run: |
-        python -m py_compile *.py
+        python -m compileall .
         ls -R | grep -E "(__pycache__|\.pyc|\.pyo$)"
 
     - name: Print output
       run: |
-        cat *.pyc
+        cat $(find . -name '*.pyc')
