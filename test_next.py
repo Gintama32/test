@@ -1,6 +1,7 @@
 from next import msg
 import pytest
 
+@pytest.next
 def test_next(capsys):
     msg()
     captured = capsys.readouterr()
